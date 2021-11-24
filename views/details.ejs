@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
+    <title><%= title %></title>
+    
+</head>
+<body>
+    
+        <nav>
+            <h2 id="logo"> <a href=""><%= title %></a> </h2>
+            
+            <a id="signIn" href="">Log In</a>
+            <a id="logIn" href="">Sign In</a>
+
+        </nav>
+        <h1><%= day.day %></h1>
+        <h2><%= day.task %></h1>
+
+        <div id="detailsBox" class="detailsContainer">
+
+            <h3><a href="/tasks/<%= task.id %>/edit">Edit Task</a></h3>
+                <h1><%= day.task %></h1>
+                <h3><%= day.details %></h3>
+            <form action="/skills/<%= skill.id %>?_method=PUT" method="POST" autocomplete="on">
+                <input type="text" name="task" placeholder="Task" value="<%= skill.skill %>" />
+                <input type="text" name="details" placeholder="Details" value="<%= skill.details %>"/>
+                <button type="submit">Submit Change</button>
+
+            </form>
+                        
+            <form
+                action="/tasks/<%= day.id %>?_method=DELETE"
+                class="delete-form"
+                method="POST"
+                >
+                <button type="submit">Delete Task</button>
+                </form>
+
+        </div>
+
+        
+    <footer><%= title %> © 2021</footer>
+
+
+
+    
+</body>
+</html>
