@@ -44,3 +44,33 @@
   <% } else { %>
     <a id="logIn" href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
   <% } %> -->
+
+
+
+
+  //user router
+
+  / var usersCtrl = require("../controllers/users");
+
+// function isLoggedIn(req, res, next) {
+//   if ( req.isAuthenticated() ) return next();
+//   res.redirect('/auth/google');
+// }
+
+/* GET users listing. */
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
+
+
+// /* GET users . */
+
+// router.get('/users', isLoggedIn, usersCtrl.index);
+
+// // POST /tasks
+// // We will already have access to the logged in student on
+// // the server, therefore do not use: /users/:id/tasks
+// router.post('/:id/tasks', isLoggedIn, usersCtrl.createTask);
+
+// // DELETE /tasks/:id
+// router.delete('/:daysid/tasks/:id/', usersCtrl.delleteTask);
