@@ -22,7 +22,7 @@ Everybody in the house can see what task has been assingned to each one, on ever
 
 ## Getting Started
 
-### [Visit the app  here](https://)
+### [Visit the app  here](https://myturn-app.herokuapp.com/)
 
 * It's simple and intuitive to use. Look at the weekdays and see if there are tasks already. 
 * You can visualize the task by clicking on it. Once it's done, a new window will pop up, and you'll see the description of the task.
