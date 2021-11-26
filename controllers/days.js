@@ -10,7 +10,7 @@ function allDays(req, res) {
 
 
 
-//   new: newTask,
+
   
 
 
@@ -23,6 +23,7 @@ function newTask(req, res) {
 
 
 function createTask(req,res) {
+    
     Day.findById(req.params.id, function(err, day){ 
        console.log(day)
        day.tasks.push(req.body);
@@ -31,34 +32,55 @@ function createTask(req,res) {
 
        })
     })
-    // Day.create(req.body);
-    // res.redirect("/days");
-    // console.log(req.body);
-}
-
-function editTask(req,res) {
-    res.render("details", { day: Day.getOne(req.params.id) });  
     
 }
 
+function editTask(req,res) {
+   console.log("EDIT TASK")
+    Day.findById(req.params.daysid, function(err, day){ 
+       console.log(day)
+       let task = day.tasks.filter(function(task) {
+        return task._id == req.params.id
+        })[0]
+        console.log(task)
+        res.render(`details`, {day, task});
+        
+           
+
+       })
+    
+    
+    
+    
+}
+
+      
 function updateTask(req, res) {
-    Day.updateOne(req.params.id, req.body.skill, req.body.details );
-    res.redirect(`/skills`);
+    Day.findById(req.params.daysid, function(err, day){
+        const task = day.tasks.find(task => task._id == req.params.id);
+        task.task = req.body.task
+        task.details = req.body.details
+        day.save(function(err) {
+            console.log(task)
+            res.redirect(`/days/`);
+        })
+
+    });
+
+    
 }
 
 
-
-
-
 function deleteTask(req, res) {
-    Day.deleteOne(req.params.id, function(err, day){
-        console.log(day);
-        day.tasks.splice(req.body);
-        res.redirect(`/days/`);
+    console.log("test")
+    Day.findById(req.params.daysid, function(err, day){
+    day.tasks.id(req.params.id).remove();
+        day.save(function(err) {
+            res.redirect(`/days/`);
  
-        
-
-    });
+        })
+     })
+    
     
 }
 

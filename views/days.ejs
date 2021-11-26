@@ -49,77 +49,13 @@
                <div class="addBtn"><a href="/days/<%= days[i]._id %>/tasks/new">Add Task</a> </div>
                <div class="dayOfWeek"><%= days[i].day.toUpperCase()%></div>
                <% days[i].tasks.forEach(task => { %>
-               <div class="taskCard"><a href="/days/<%= days[i]._id %>/tasks/<%= task._id %>"><%= task.task %></a></div>
+               <a class="taskClick"href="/days/<%= days[i]._id %>/tasks/<%= task._id %>/edit">
+                   <div class="taskCard"><%= task.task %></div>
+               </a>
                <% }) %>
             </div>
                <% } %> </div>
-                <!-- <table>
-                    <tr>
-                        <% days.forEach(day => {  %>
-                            <th class="addBtn"><a href="/days/<%= day._id %>/tasks/new">Add </a></th>
-                             <%  }) %>
-                        
-                         
-                    </tr>
-                    <tr>
-                        <th>Monday</th>
-                        <th>Tuesday</th>
-                        <th>Wednesday</th>
-                        <th>Thursday</th>
-                        <th>Friday</th>
-                        <th>Saturday</th>
-                        <th>Sunday</th>
-                    </tr>
-                    
-                    
-                </table>
-                <div class="taskContainer">
-                    <div class="taskBox">
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                    </div>
-
-                    <div class="taskBox">
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                    </div>
-
-                    <div class="taskBox">
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                    </div>
-
-                    <div class="taskBox">
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                    </div>
-
-                    <div class="taskBox">
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                    </div>
-
-                    <div class="taskBox">
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                    </div>
-
-                    <div class="taskBox">
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                        <div class="taskCard"></div>
-                    </div>
-                    
-
-                </div> -->
-            
-            
+                
 
         </div>
 

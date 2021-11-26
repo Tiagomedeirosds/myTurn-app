@@ -8,45 +8,47 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
-    <title><%= title %></title>
+    <title>myTurn</title>
     
 </head>
 <body>
     
         <nav>
-            <h2 id="logo"> <a href=""><%= title %></a> </h2>
+            <h2 id="logo"> <a href="">myTurn</a> </h2>
             
             <a id="signIn" href="">Log In</a>
             <a id="logIn" href="">Sign In</a>
 
         </nav>
-        <h1><%= day.day %></h1>
-        <h2><%= day.task %></h1>
 
-        <div id="detailsBox" class="detailsContainer">
-
-            <h3><a href="/tasks/<%= task.id %>/edit">Edit Task</a></h3>
-                <h1><%= day.task %></h1>
-                <h3><%= day.details %></h3>
-            <form action="/skills/<%= skill.id %>?_method=PUT" method="POST" autocomplete="on">
-                <input type="text" name="task" placeholder="Task" value="<%= skill.skill %>" />
-                <input type="text" name="details" placeholder="Details" value="<%= skill.details %>"/>
-                <button type="submit">Submit Change</button>
-
-            </form>
-                        
-            <form
-                action="/tasks/<%= day.id %>?_method=DELETE"
-                class="delete-form"
-                method="POST"
-                >
-                <button type="submit">Delete Task</button>
+        <div class="wrapper">
+            <div class="textDisplay">
+                <h1><%= day.day.toUpperCase() %></h1>  
+                <h2><%= task.task %></h2>
+                <h3><%= task.details %></h3>
+            </div>
+            <div id="detailsBox" class="detailsContainer">
+                <h3>Edit Task</h3>
+                    <h1><%= day.task %></h1>
+                    <h3><%= day.details %></h3>
+                <form action="/days/<%= day._id %>/tasks/<%= task._id %>?_method=PUT" method="POST" autocomplete="on">
+                    <label>Task<input type="text" name="task" placeholder="Task" value="<%= task.task %>" /></label>
+                    <label>Details<input type="text" name="details" placeholder="Details" value="<%= task.details %>"/></label>
+                    <button type="submit">Submit Change</button>
                 </form>
-
+            
+                <form
+                    action="/days/<%= day._id %>/tasks/<%= task._id %>?_method=DELETE"
+                    class="delete-form"
+                    method="POST"
+                    >
+                    <button type="submit">Delete Task</button>
+                    </form>
+            </div>
         </div>
 
         
-    <footer><%= title %> © 2021</footer>
+    <footer>myTurn © 2021</footer>
 
 
 

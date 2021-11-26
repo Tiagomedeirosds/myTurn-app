@@ -18,9 +18,9 @@ var router = express.Router();
 router.get('/', daysCtrl.allDays)
 router.get('/:id/tasks/new', daysCtrl.newTask);
 router.post('/:id/tasks', daysCtrl.createTask);
-router.delete('/tasks/:id',daysCtrl.deleteTask);
-// router.get("/:id/edit", skillCtrl.edit);
-// router.put("/:id", skillCtrl.update);
+router.delete('/:daysid/tasks/:id',daysCtrl.deleteTask);
+router.get("/:daysid/tasks/:id/edit", daysCtrl.editTask);
+router.put("/:daysid/tasks/:id/", daysCtrl.updateTask);
 
 
 

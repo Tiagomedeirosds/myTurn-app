@@ -20,12 +20,15 @@
             <a id="logIn" href="">Sign In</a>
 
         </nav>
-        <h1><%= day.day %></h1>
+        <div class="textDisplay">
+            <h1><%= day.day.toUpperCase() %></h1>
+        </div>
         <div id="newBox" class="newContainer">
+            <h3>Add Task</h3>
 
             <form action="/days/<%= day._id %>/tasks" method="POST" autocomplete="on">
-                <input type="text" name="task" placeholder="New Task" />
-                <input type="text" name="details" placeholder="Details"/>
+                <label >Task<input type="text" name="task" placeholder="New Task" /></label>
+                <label>Details<input type="text" name="details" placeholder="Details"/></label>
                 <button type="submit">Save Task</button>
 
         </div>
