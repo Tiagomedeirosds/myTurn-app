@@ -6,9 +6,9 @@ Everybody in the house can see what task has been assingned to each one, on ever
 ## Screenshots
 
 ![App Screenshots 1](public/images/01-myTurn.png)
-![App Screenshots 1](Assets/Screenshot02.png)
-![App Screenshots 1](Assets/Screenshot03.png)
-![App Screenshots 1](Assets/Screenshot04.png)
+![App Screenshots 2](public/images/02-myTurn.png)
+![App Screenshots 3](public/images/03-myTurn.png)
+![App Screenshots 4](public/images/04-myTurn.png)
 
 ## Technologies Used
 
