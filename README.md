@@ -5,7 +5,7 @@ Now, you and your roomates (or even family) can make a week schedule of the all 
 Everybody in the house can see what task has been assingned to each one, on every day of the week.
 ## Screenshots
 
-![App Screenshots 1](Assets/Screenshot00.png)
+![App Screenshots 1](/images/01-myTurn.png)
 ![App Screenshots 1](Assets/Screenshot02.png)
 ![App Screenshots 1](Assets/Screenshot03.png)
 ![App Screenshots 1](Assets/Screenshot04.png)
